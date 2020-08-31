@@ -139,7 +139,7 @@
         function addMapControl() {}
 
         //标注点数组
-        var markerArr = [{title:"Gana Biotech",content:"Address：Room 372, No. 3329-23, Zhongshan North Road, Putuo District, Shanghai<br/>Skype: live:penny_1411<br/>Q&nbsp;&nbsp;Email：penny@ganabio.cn",point:"117.88886|31.606127",isOpen:1,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+        var markerArr = [{title:"Gana Biotech",content:"Address：Room 372, No. 3329-23, Zhongshan North Road, Putuo District, Shanghai<br/>Skype: live:penny_1411<br/>Q&nbsp;&nbsp;Email：sales@ganabio.cn",point:"117.88886|31.606127",isOpen:1,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
 		 ];
         //创建marker
         function addMarker() {

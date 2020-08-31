@@ -289,7 +289,7 @@
               <dd>
                 <p>Skype: live:penny_1411</p>
                 <p>Mobile：+86-13671682484</p>
-                <p>Email：penny@ganabio.cn</p>
+                <p>Email：sales@ganabio.cn</p>
                 <p>Address：Room 372, No. 3329-23, Zhongshan North Road, Putuo District, Shanghai</p>
               </dd>
             <!--</dl>-->
@@ -307,7 +307,7 @@
               <h4>Fill in the demand online, we will answer your questions as soon as possible.</h4>
                 <p>Skype: live:penny_1411</p>
                 <p>Mobile：+86-13671682484</p>
-                <p>Email：penny@ganabio.cn</p>
+                <p>Email：sales@ganabio.cn</p>
                 <p>Address：Room 372, No. 3329-23, Zhongshan North Road, Putuo District, Shanghai</p>
             </div>
           </div>
@@ -388,7 +388,7 @@
         function addMapControl() {}
 
         //标注点数组
-        var markerArr = [{title:"Gana Biotech",content:"Address：Room 372, No. 3329-23, Zhongshan North Road, Putuo District, Shanghai<br/>Skype: live:penny_1411<br/>Q&nbsp;&nbsp;Email：penny@ganabio.cn",point:"117.88886|31.606127",isOpen:1,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+        var markerArr = [{title:"Gana Biotech",content:"Address：Room 372, No. 3329-23, Zhongshan North Road, Putuo District, Shanghai<br/>Skype: live:penny_1411<br/>Q&nbsp;&nbsp;Email：sales@ganabio.cn",point:"117.88886|31.606127",isOpen:1,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
 		 ];
         //创建marker
         function addMarker() {
