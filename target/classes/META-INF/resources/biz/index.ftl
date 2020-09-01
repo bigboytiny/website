@@ -5,6 +5,9 @@
 <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="expires" content="0">
 <title>Gana Biotech</title>
 <meta name="description" content="Shanghai Jiana Biotechnology Co., Ltd" />
 <link href="css/dmaku.css" rel="stylesheet" type="text/css">
@@ -159,43 +162,43 @@
       <div class="case k1120">
         <ul class="clearfix">
           <li>
-            <div class="view-tenth"><img src="images/seasonings&flavorings.jpg"><a href="${rc.contextPath}/seasonings_flavorings" class="mask" target="_blank">
+            <div class="view-tenth"><img src="images/seasonings&flavorings.jpg"><a href="${rc.contextPath}/products?productType=seasonings_flavorings" class="mask" target="_blank">
               <h2>Seasonings&Flavorings</h2>
               <p>发布于：2014-12-06 / 浏览：134</p>
               </a> </div>
           </li>
           <li>
-            <div class="view-tenth"><img src="images/thickeners.jpg"><a href="${rc.contextPath}/thickeners" class="mask" target="_blank">
+            <div class="view-tenth"><img src="images/thickeners.jpg"><a href="${rc.contextPath}/products?productType=thickeners" class="mask" target="_blank">
               <h2>Thickeners</h2>
               <p>发布于：2014-12-06 / 浏览：190</p>
               </a> </div>
           </li>
           <li>
-            <div class="view-tenth"><img src="images/preservatives.jpg"><a href="${rc.contextPath}/preservatives" class="mask" target="_blank">
+            <div class="view-tenth"><img src="images/preservatives.jpg"><a href="${rc.contextPath}/products?productType=preservatives" class="mask" target="_blank">
               <h2>Preservatives</h2>
               <p>发布于：2014-12-06 / 浏览：172</p>
               </a> </div>
           </li>
           <li>
-            <div class="view-tenth"><img src="images/plant_extracts.jpg"><a href="${rc.contextPath}/plant_extracts" class="mask" target="_blank">
+            <div class="view-tenth"><img src="images/plant_extracts.jpg"><a href="${rc.contextPath}/products?productType=plant_extracts" class="mask" target="_blank">
               <h2>Plant Extracts</h2>
               <p>发布于：2014-12-06 / 浏览：94</p>
               </a> </div>
           </li>
           <li>
-            <div class="view-tenth"><img src="images/amino_acids.jpg"><a href="${rc.contextPath}/amino_acids" class="mask" target="_blank">
+            <div class="view-tenth"><img src="images/amino_acids.jpg"><a href="${rc.contextPath}/products?productType=amino_acids" class="mask" target="_blank">
               <h2>Amino Acids</h2>
               <p>发布于：2014-12-06 / 浏览：189</p>
               </a> </div>
           </li>
           <li>
-            <div class="view-tenth"><img src="images/dehydrated_vegetables.jpg"><a href="${rc.contextPath}/dehydrated_vegetables" class="mask" target="_blank">
+            <div class="view-tenth"><img src="images/dehydrated_vegetables.jpg"><a href="${rc.contextPath}/products?productType=dehydrated_vegetables" class="mask" target="_blank">
               <h2>Dehydrated Vegetables</h2>
               <p>发布于：2014-12-06 / 浏览：127</p>
               </a> </div>
           </li>
         </ul>
-        <div class="tc moreBox"><a href="#" target="_blank" class="moreBtn">MORE</a> </div>
+        <div class="tc moreBox"><a href="" target="_blank" class="moreBtn">MORE</a> </div>
       </div>
       <div class="ad_2">
         <h3><span>Gana Biotech · Your loyal partner</span></h3>
@@ -289,7 +292,7 @@
               <dd>
                 <p>Skype: live:penny_1411</p>
                 <p>Mobile：+86-13671682484</p>
-                <p>Email：penny@ganabio.cn</p>
+                <p>Email：sales@ganabio.cn</p>
                 <p>Address：Room 372, No. 3329-23, Zhongshan North Road, Putuo District, Shanghai</p>
               </dd>
             <!--</dl>-->
@@ -307,7 +310,7 @@
               <h4>Fill in the demand online, we will answer your questions as soon as possible.</h4>
                 <p>Skype: live:penny_1411</p>
                 <p>Mobile：+86-13671682484</p>
-                <p>Email：penny@ganabio.cn</p>
+                <p>Email：sales@ganabio.cn</p>
                 <p>Address：Room 372, No. 3329-23, Zhongshan North Road, Putuo District, Shanghai</p>
             </div>
           </div>
@@ -358,7 +361,15 @@
   <div class="footer"> 沪ICP备19046342号-1 <br>
     Copyright © 2015.Company name All rights reserved.More Templates ShangHai Gana Biotech Co.,Ltd
 </div>
+
+<script src="http://ditu.google.cn/maps/api/js?v=3&sensor=false&language=en" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
+
+
+
+
+
+
 
         //创建和初始化地图函数：
         function initMap() {
@@ -388,7 +399,7 @@
         function addMapControl() {}
 
         //标注点数组
-        var markerArr = [{title:"Gana Biotech",content:"Address：Room 372, No. 3329-23, Zhongshan North Road, Putuo District, Shanghai<br/>Skype: live:penny_1411<br/>Q&nbsp;&nbsp;Email：penny@ganabio.cn",point:"117.88886|31.606127",isOpen:1,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+        var markerArr = [{title:"Gana Biotech",content:"Address：Room 372, No. 3329-23, Zhongshan North Road, Putuo District, Shanghai<br/>Skype: live:penny_1411<br/>Q&nbsp;&nbsp;Email：sales@ganabio.cn",point:"117.88886|31.606127",isOpen:1,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
 		 ];
         //创建marker
         function addMarker() {

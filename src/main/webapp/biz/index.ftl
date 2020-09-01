@@ -2,6 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="expires" content="0">
 <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -159,43 +162,43 @@
       <div class="case k1120">
         <ul class="clearfix">
           <li>
-            <div class="view-tenth"><img src="images/seasonings&flavorings.jpg"><a href="${rc.contextPath}/seasonings_flavorings" class="mask" target="_blank">
+            <div class="view-tenth"><img src="images/seasonings&flavorings.jpg"><a href="${rc.contextPath}/products?productType=seasonings_flavorings" class="mask" target="_blank">
               <h2>Seasonings&Flavorings</h2>
               <p>发布于：2014-12-06 / 浏览：134</p>
               </a> </div>
           </li>
           <li>
-            <div class="view-tenth"><img src="images/thickeners.jpg"><a href="${rc.contextPath}/thickeners" class="mask" target="_blank">
+            <div class="view-tenth"><img src="images/thickeners.jpg"><a href="${rc.contextPath}/products?productType=thickeners" class="mask" target="_blank">
               <h2>Thickeners</h2>
               <p>发布于：2014-12-06 / 浏览：190</p>
               </a> </div>
           </li>
           <li>
-            <div class="view-tenth"><img src="images/preservatives.jpg"><a href="${rc.contextPath}/preservatives" class="mask" target="_blank">
+            <div class="view-tenth"><img src="images/preservatives.jpg"><a href="${rc.contextPath}/products?productType=preservatives" class="mask" target="_blank">
               <h2>Preservatives</h2>
               <p>发布于：2014-12-06 / 浏览：172</p>
               </a> </div>
           </li>
           <li>
-            <div class="view-tenth"><img src="images/plant_extracts.jpg"><a href="${rc.contextPath}/plant_extracts" class="mask" target="_blank">
+            <div class="view-tenth"><img src="images/plant_extracts.jpg"><a href="${rc.contextPath}/products?productType=plant_extracts" class="mask" target="_blank">
               <h2>Plant Extracts</h2>
               <p>发布于：2014-12-06 / 浏览：94</p>
               </a> </div>
           </li>
           <li>
-            <div class="view-tenth"><img src="images/amino_acids.jpg"><a href="${rc.contextPath}/amino_acids" class="mask" target="_blank">
+            <div class="view-tenth"><img src="images/amino_acids.jpg"><a href="${rc.contextPath}/products?productType=amino_acids" class="mask" target="_blank">
               <h2>Amino Acids</h2>
               <p>发布于：2014-12-06 / 浏览：189</p>
               </a> </div>
           </li>
           <li>
-            <div class="view-tenth"><img src="images/dehydrated_vegetables.jpg"><a href="${rc.contextPath}/dehydrated_vegetables" class="mask" target="_blank">
+            <div class="view-tenth"><img src="images/dehydrated_vegetables.jpg"><a href="${rc.contextPath}/products?productType=dehydrated_vegetables" class="mask" target="_blank">
               <h2>Dehydrated Vegetables</h2>
               <p>发布于：2014-12-06 / 浏览：127</p>
               </a> </div>
           </li>
         </ul>
-        <div class="tc moreBox"><a href="#" target="_blank" class="moreBtn">MORE</a> </div>
+        <div class="tc moreBox"><a href="" target="_blank" class="moreBtn">MORE</a> </div>
       </div>
       <div class="ad_2">
         <h3><span>Gana Biotech · Your loyal partner</span></h3>
@@ -358,7 +361,15 @@
   <div class="footer"> 沪ICP备19046342号-1 <br>
     Copyright © 2015.Company name All rights reserved.More Templates ShangHai Gana Biotech Co.,Ltd
 </div>
+
+<script src="http://ditu.google.cn/maps/api/js?v=3&sensor=false&language=en" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
+
+
+
+
+
+
 
         //创建和初始化地图函数：
         function initMap() {

@@ -93,9 +93,8 @@
             <div class="viewMain">
                 <div class="case k1120">
                     <div>
-                      <img src="images/Flavouring.png">
-                      <p>发布于：2014-12-06 / 浏览：134</p>
-                      </a>
+                      <!--<img src="images/Flavouring.png">-->
+                      <h3 class="title">Product information is being updated</h3>
                       </div>
                   </div>
                 <div class="paging">
@@ -141,7 +140,7 @@
         function addMapControl() {}
 
         //标注点数组
-        var markerArr = [{title:"Gana Biotech",content:"Address：Room 372, No. 3329-23, Zhongshan North Road, Putuo District, Shanghai<br/>Skype: live:penny_1411<br/>Q&nbsp;&nbsp;Email：penny@ganabio.cn",point:"117.88886|31.606127",isOpen:1,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+        var markerArr = [{title:"Gana Biotech",content:"Address：Room 372, No. 3329-23, Zhongshan North Road, Putuo District, Shanghai<br/>Skype: live:penny_1411<br/>Q&nbsp;&nbsp;Email：sales@ganabio.cn",point:"117.88886|31.606127",isOpen:1,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
 		 ];
         //创建marker
         function addMarker() {

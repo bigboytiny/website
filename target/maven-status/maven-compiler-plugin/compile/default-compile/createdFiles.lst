@@ -1,3 +1,4 @@
-com\gana\BootApplication.class
-com\gana\controller\BaseController.class
 com\gana\controller\MainController.class
+com\gana\BootApplication.class
+com\gana\enums\ProductTypeEnum.class
+com\gana\controller\BaseController.class
