@@ -1,4 +1,11 @@
+D:\idea_space\website\src\main\java\com\gana\service\IProductService.java
 D:\idea_space\website\src\main\java\com\gana\controller\BaseController.java
+D:\idea_space\website\src\main\java\com\gana\dal\entity\ProductType.java
+D:\idea_space\website\src\main\java\com\gana\dal\entity\Product.java
 D:\idea_space\website\src\main\java\com\gana\controller\MainController.java
+D:\idea_space\website\src\main\java\com\gana\dal\CodeGenerator.java
 D:\idea_space\website\src\main\java\com\gana\enums\ProductTypeEnum.java
 D:\idea_space\website\src\main\java\com\gana\BootApplication.java
+D:\idea_space\website\src\main\java\com\gana\config\DataBaseConfiguration.java
+D:\idea_space\website\src\main\java\com\gana\dal\mapper\ProductMapper.java
+D:\idea_space\website\src\main\java\com\gana\dal\mapper\ProductTypeMapper.java

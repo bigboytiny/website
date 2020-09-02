@@ -1,4 +1,13 @@
-com\gana\controller\MainController.class
+com\gana\dal\CodeGenerator$2.class
+com\gana\config\DataBaseConfiguration.class
+com\gana\dal\entity\ProductType.class
 com\gana\BootApplication.class
-com\gana\enums\ProductTypeEnum.class
+com\gana\dal\entity\Product.class
+com\gana\dal\CodeGenerator$1.class
+com\gana\dal\mapper\ProductTypeMapper.class
+com\gana\service\IProductService.class
+com\gana\dal\CodeGenerator.class
 com\gana\controller\BaseController.class
+com\gana\controller\MainController.class
+com\gana\dal\mapper\ProductMapper.class
+com\gana\enums\ProductTypeEnum.class
