@@ -96,8 +96,8 @@
             <div class="viewMain">
                 <div class="case k1120">
                     <div>
-<!--                      <img src="images/Flavouring.png">-->
-                        <h3 class="title">Product information is being updated</h3>
+                      <img src="images/plant_extracts.png">
+<!--                        <h3 class="title">Product information is being updated</h3>-->
                     </div>
                   </div>
                 <div class="paging">
