@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <title>Gana Biotech</title>
-<meta name="description" content="Shanghai Jiana Biotechnology Co., Ltd" />
+<meta name="description" content="Shanghai Gana Biotech Co., Ltd" />
 <link href="css/dmaku.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="js/theme_trust.js"></script>
