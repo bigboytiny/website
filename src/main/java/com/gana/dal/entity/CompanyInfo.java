@@ -2,16 +2,14 @@ package com.gana.dal.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import java.time.LocalDateTime;
+import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.util.Date;
-
 /**
  * <p>
- * 产品种类
+ * 公司详情
  * </p>
  *
  * @author jesse
@@ -19,7 +17,7 @@ import java.util.Date;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ProductType implements Serializable {
+public class CompanyInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -30,44 +28,49 @@ public class ProductType implements Serializable {
     private Long id;
 
     /**
-     * 类型名称
+     * 公司名称
      */
     private String name;
 
     /**
-     * 类型标题
+     * 公司简称
      */
-    private String title;
+    private String shortName;
 
     /**
-     * 类型描述
+     * Skype账号
      */
-    private String description;
+    private String skype;
 
     /**
-     * 备注
+     * 手机号码
      */
-    private String remark;
+    private String mobile;
 
     /**
-     * 类型对应图片地址
+     * 邮箱
      */
-    private String image;
+    private String email;
 
     /**
-     * 点击后跳转地址
+     * 地址
      */
-    private String targetUrl;
+    private String address;
+
+    /**
+     * 公司介绍
+     */
+    private String profile;
 
     /**
      * 创建时间
      */
-    private Date createTime;
+    private LocalDateTime createTime;
 
     /**
-     * 修改时间
+     * 更新时间
      */
-    private Date updateTime;
+    private LocalDateTime updateTime;
 
 
 }

@@ -2,16 +2,15 @@ package com.gana.dal.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import java.time.LocalDateTime;
+import com.baomidou.mybatisplus.annotation.TableField;
+import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.util.Date;
-
 /**
  * <p>
- * 产品种类
+ * 客户消息
  * </p>
  *
  * @author jesse
@@ -19,7 +18,7 @@ import java.util.Date;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class ProductType implements Serializable {
+public class CustomMessage implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -30,44 +29,45 @@ public class ProductType implements Serializable {
     private Long id;
 
     /**
-     * 类型名称
+     * 客户名称
      */
     private String name;
 
     /**
-     * 类型标题
+     * 客户skype
      */
-    private String title;
+    private String skype;
 
     /**
-     * 类型描述
+     * 客户email
      */
-    private String description;
+    private String email;
 
     /**
-     * 备注
+     * 客户公司
      */
-    private String remark;
+    private String company;
 
     /**
-     * 类型对应图片地址
+     * 消息
      */
-    private String image;
+    private String message;
 
     /**
-     * 点击后跳转地址
+     * 是否处理 Y：已处理，N：未处理
      */
-    private String targetUrl;
+    @TableField("isDone")
+    private String isDone;
 
     /**
      * 创建时间
      */
-    private Date createTime;
+    private LocalDateTime createTime;
 
     /**
-     * 修改时间
+     * 更新时间
      */
-    private Date updateTime;
+    private LocalDateTime updateTime;
 
 
 }

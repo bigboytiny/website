@@ -4,7 +4,12 @@
  */
 package com.gana.controller;
 
+import com.gana.dal.entity.ProductType;
+import com.gana.dal.repository.CompanyInfoRepository;
+import com.gana.dal.repository.CustomMessageRepository;
+import com.gana.dal.repository.ProductTypeRepository;
 import com.gana.enums.ProductTypeEnum;
+import com.github.pagehelper.PageInfo;
 import org.apache.commons.httpclient.util.DateUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
@@ -22,6 +28,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
+import java.util.Objects;
 
 
 /**
@@ -33,16 +40,30 @@ public class MainController extends BaseController {
 
     private static final String FILE_PATH = "/opt/customInfo/";
 
-    @RequestMapping("/")
-    public ModelAndView main(ModelMap map) {
+    @Resource
+    private ProductTypeRepository productTypeRepository;
+
+    @Resource
+    private CompanyInfoRepository companyInfoRepository;
+
+    @Resource
+    private CustomMessageRepository customMessageRepository;
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public ModelAndView main() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("/biz/index");
+        PageInfo<ProductType> productTypes = productTypeRepository.queryByPage(1, 6);
+        if (Objects.nonNull(productTypes)) {
+            modelAndView.getModelMap().addAttribute("productTypes", productTypes.getList());
+        }
+        modelAndView.getModelMap().addAttribute("companyInfo", companyInfoRepository.queryCompanyInfo());
         return modelAndView;
     }
 
     @RequestMapping(value = "/products", method = RequestMethod.GET)
     @ResponseBody
-    public ModelAndView products(ModelMap map, @RequestParam("productType") String productType) {
+    public ModelAndView products(@RequestParam("productType") String productType) {
         ModelAndView modelAndView = new ModelAndView();
         if (StringUtils.isEmpty(productType)) {
             modelAndView.setViewName("visitWeb");
@@ -53,6 +74,11 @@ public class MainController extends BaseController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/productType/list", method = RequestMethod.GET)
+    @ResponseBody
+    public PageInfo<ProductType> productTypeList(@RequestParam(value = "pageNum", required = true) int pageNum, @RequestParam(value = "pageSize", required = true) int pageSize) {
+        return productTypeRepository.queryByPage(pageNum, pageSize);
+    }
 
     @RequestMapping("/contact")
     public ModelAndView contact(ModelMap map) {

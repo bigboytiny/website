@@ -1,12 +1,10 @@
 package com.gana.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.github.pagehelper.PageHelper;
+import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +17,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
-import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement(proxyTargetClass = true)
@@ -73,37 +70,10 @@ public class DataBaseConfiguration implements EnvironmentAware {
         return druidDataSource;
     }
 
-    public static SqlSessionFactory createDefaultSqlSessionFactory(DataSource dataSource, String configLocation, String mapperLocation) throws Exception {
-        SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
-        factory.setTypeAliasesPackage("com.gana.dal.entity");
-        factory.setDataSource(dataSource);
-        ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        factory.setConfigLocation(resolver.getResource(configLocation));
-        factory.setMapperLocations(resolver.getResources(mapperLocation));
-
-        //分页插件
-        PageHelper pageHelper = new PageHelper();
-        Properties properties = new Properties();
-        properties.setProperty("reasonable", "true");
-        properties.setProperty("supportMethodsArguments", "true");
-        properties.setProperty("returnPageInfo", "check");
-        properties.setProperty("params", "count=countSql");
-        pageHelper.setProperties(properties);
-
-        //添加插件
-        factory.setPlugins(new Interceptor[]{(Interceptor) pageHelper});
-
-        SqlSessionFactory target = (SqlSessionFactory) factory.getObject();
-
-        return target;
-    }
-
     /**
      * 配置数据源
      */
     @Bean(name = "dataSource", initMethod = "init", destroyMethod = "close")
-    @Qualifier("dataSource")
-    //@ConfigurationProperties(prefix = "dataSource.ppdaiLoanMarkting")
     public DataSource getDataSource() throws SQLException {
         return createDefaultDruidDataSource();
     }
@@ -113,8 +83,7 @@ public class DataBaseConfiguration implements EnvironmentAware {
      * 事物管理器配置
      */
     @Bean(name = "transactionManager")
-    @Qualifier("transactionManager")
-    public PlatformTransactionManager txPpdaiLoanCouponManager() throws Exception {
+    public PlatformTransactionManager transactionManager() throws Exception {
         return new DataSourceTransactionManager(getDataSource());
     }
 }

@@ -19,10 +19,13 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <mybatis-spring-boot-starter.version>1.1.1</mybatis-spring-boot-starter.version>
         <mybatis-plus-generator.version>3.4.0</mybatis-plus-generator.version>
-        <druid.version>1.1.23</druid.version>
-        <pagehelper.version>1.2.13</pagehelper.version>
+        <mybatis-plus-boot-starter.version>3.4.0</mybatis-plus-boot-starter.version>
+        <druid.version>1.1.21</druid.version>
+        <pagehelper.version>5.1.11</pagehelper.version>
+
+        <rapid-core.version>4.0.5 </rapid-core.version>
+
         <!-- util -->
         <commons-lang3.version>3.6</commons-lang3.version>
         <commons-codec.version>1.10</commons-codec.version>
@@ -35,6 +38,7 @@
         <aspectjrt.version>1.8.10</aspectjrt.version>
         <aspectjweaver.version>1.8.10</aspectjweaver.version>
         <jstl.version>1.2</jstl.version>
+        <hutool-all.version>5.4.2</hutool-all.version>
 
         <!--apollo配置中心-->
         <apollo.client.version>1.7.0</apollo.client.version>
@@ -58,6 +62,19 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
         <!-- 映入tomcat -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -67,6 +84,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.googlecode.rapid-framework</groupId>
+            <artifactId>rapid-core</artifactId>
+            <version>${rapid-core.version}</version>
+        </dependency>
         <!--BD-->
         <dependency>
             <groupId>mysql</groupId>
@@ -74,9 +96,9 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>${mybatis-spring-boot-starter.version}</version>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatis-plus-boot-starter.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -89,14 +111,15 @@
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
+            <artifactId>druid-spring-boot-starter</artifactId>
             <version>${druid.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <artifactId>pagehelper</artifactId>
             <version>${pagehelper.version}</version>
         </dependency>
+
 
         <!--redis-->
         <dependency>
@@ -198,6 +221,12 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectjweaver.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool-all.version}</version>
         </dependency>
     </dependencies>
 
