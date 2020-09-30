@@ -11,8 +11,9 @@
 <title>Gana Biotech</title>
 <meta name="description" content="Shanghai Gana Biotech Co., Ltd" />
 <link href="css/dmaku.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="js/theme_trust.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/jquery-3.5.1.min.js"/>
+<script language="JavaScript" type="text/javascript" src="js/theme_trust.js"/>
+<script language="JavaScript" type="text/javascript" src="js/waterfall.min.js"/>
 <style type="text/css">
         html,
         body {

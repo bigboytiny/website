@@ -4,11 +4,12 @@
  */
 package com.gana.controller;
 
+import com.gana.dal.entity.Product;
 import com.gana.dal.entity.ProductType;
 import com.gana.dal.repository.CompanyInfoRepository;
 import com.gana.dal.repository.CustomMessageRepository;
+import com.gana.dal.repository.ProductRepository;
 import com.gana.dal.repository.ProductTypeRepository;
-import com.gana.enums.ProductTypeEnum;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.httpclient.util.DateUtil;
 import org.springframework.stereotype.Controller;
@@ -29,6 +30,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
 import java.util.Objects;
+import java.util.Optional;
+import java.util.function.Function;
 
 
 /**
@@ -42,6 +45,9 @@ public class MainController extends BaseController {
 
     @Resource
     private ProductTypeRepository productTypeRepository;
+
+    @Resource
+    private ProductRepository productRepository;
 
     @Resource
     private CompanyInfoRepository companyInfoRepository;
@@ -63,14 +69,15 @@ public class MainController extends BaseController {
 
     @RequestMapping(value = "/products", method = RequestMethod.GET)
     @ResponseBody
-    public ModelAndView products(@RequestParam("productType") String productType) {
+    public ModelAndView products(@RequestParam("id") Long id) {
         ModelAndView modelAndView = new ModelAndView();
-        if (StringUtils.isEmpty(productType)) {
-            modelAndView.setViewName("visitWeb");
+        if (Objects.isNull(id)) {
             return modelAndView;
         }
-        modelAndView.setViewName("/biz/products/" + productType);
-        modelAndView.getModelMap().put("title", ProductTypeEnum.getDesc(productType));
+        ProductType productType = productTypeRepository.getById(id);
+        modelAndView.setViewName("/biz/products/product");
+        modelAndView.getModelMap().put("id", id);
+        modelAndView.getModelMap().put("title", Optional.ofNullable(productType).map(ProductType::getTitle).orElse(null));
         return modelAndView;
     }
 
@@ -78,6 +85,12 @@ public class MainController extends BaseController {
     @ResponseBody
     public PageInfo<ProductType> productTypeList(@RequestParam(value = "pageNum", required = true) int pageNum, @RequestParam(value = "pageSize", required = true) int pageSize) {
         return productTypeRepository.queryByPage(pageNum, pageSize);
+    }
+
+    @RequestMapping(value = "/product/list", method = RequestMethod.GET)
+    @ResponseBody
+    public PageInfo<Product> productList(@RequestParam("productTypeId") Long productTypeId, @RequestParam(value = "pageNum", required = true) int pageNum, @RequestParam(value = "pageSize", required = true) int pageSize) {
+        return productRepository.queryByPage(productTypeId, pageNum, pageSize);
     }
 
     @RequestMapping("/contact")

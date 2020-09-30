@@ -7,6 +7,7 @@ import com.gana.dal.mapper.ProductTypeMapper;
 import com.gana.dal.repository.ProductTypeRepository;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -23,8 +24,8 @@ import java.util.List;
 public class ProductTypeRepositoryImpl extends ServiceImpl<ProductTypeMapper, ProductType> implements ProductTypeRepository {
 
     @Override
-    public List<ProductType> queryAll() {
-        return this.getBaseMapper().selectList(Wrappers.<ProductType>query().orderByAsc("id"));
+    public ProductType queryByName(String name) {
+        return this.getBaseMapper().selectOne(Wrappers.<ProductType>query().eq(StringUtils.isNotBlank(name), "name", name));
     }
 
     @Override
@@ -34,4 +35,6 @@ public class ProductTypeRepositoryImpl extends ServiceImpl<ProductTypeMapper, Pr
                 .doSelectPageInfo(() -> this.getBaseMapper().selectList(Wrappers.<ProductType>query().orderByAsc("id")));
         return info;
     }
+
+
 }

@@ -393,7 +393,7 @@
                         if(isNull(data[i])){
                             break;
                         }
-                        content='<li><div class="view-tenth"><img src="'+data[i].image+'"><a href="${rc.contextPath}/products?productType='+data[i].name+'" class="mask" target="_self"><h2>'+data[i].title+'</h2><p>'+data[i].description+'</p></a></div></li>';
+                        content='<li><div class="view-tenth"><img src="'+data[i].image+'"><a href="${rc.contextPath}/products?id='+data[i].id+'" class="mask" target="_self"><h2>'+data[i].title+'</h2><p>'+data[i].description+'</p></a></div></li>';
                         $("#product_type_list").append(content);
                     }
                      /*隐藏more*/

@@ -1,7 +1,10 @@
 package com.gana.dal.repository;
 
-import com.gana.dal.entity.Product;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.gana.dal.entity.Product;
+import com.github.pagehelper.PageInfo;
+
+import java.util.List;
 
 /**
  * <p>
@@ -12,5 +15,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2020-09-15
  */
 public interface ProductRepository extends IService<Product> {
+
+    List<Product> queryList(Long productTypeId);
+
+    PageInfo<Product> queryByPage(Long productTypeId, int pageNum, int pageSize);
 
 }

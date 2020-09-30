@@ -16,7 +16,7 @@ import java.util.List;
  */
 public interface ProductTypeRepository extends IService<ProductType> {
 
-    List<ProductType> queryAll();
+    ProductType queryByName(String name);
 
     PageInfo<ProductType> queryByPage(int pageNum, int pageSize);
 

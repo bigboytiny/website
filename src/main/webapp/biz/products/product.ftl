@@ -96,11 +96,47 @@
             <h2 class="title"><span>${title}<br /><b>发布于：2014-12-06 18:17 　浏览：<script src="/#" type='text/javascript' language="javascript"></script></b></span></h2>
             <div class="viewMain">
                 <div class="case k1120">
-                    <div>
-                      <img src="images/preservatives.png">
+                    <div id="product_list" style="display: inline-block;">
+                      <ul>
+                           <li>
+                                <h1>
+                                    <a href="JavaScript:void(0);">
+                                        <img src="images/preservatives.png">
+                                    </a>
+                                </h1>
+                                 <h2>E 编码:<strong>E415</strong><br></h2>
+                                 <h3>ccccc</h3>
+                           </li>
+                          <li>
+                               <h1>
+                                   <a href="JavaScript:void(0);">
+                                       <img src="images/preservatives.png">
+                                   </a>
+                               </h1>
+                             <h2>aaaa</h2>
+                             <h3>ccccc</h3>
+                          </li>
+                        <li>
+                             <h1>
+                                 <a href="JavaScript:void(0);">
+                                     <img src="images/preservatives.png">
+                                 </a>
+                             </h1>
+                             <h2>ddddd</h2>
+                             <h3>ffffff</h3>
+                        </li>
+                        <li>
+                             <h1>
+                                 <a href="JavaScript:void(0);">
+                                     <img src="images/preservatives.png">
+                                 </a>
+                             </h1>
+                             <h2>ddddd</h2>
+                             <h3>ffffff</h3>
+                        </li>
+                      </ul>
 <!--                        <h3 class="title">Product information is being updated</h3>-->
                     </div>
-                  </div>
                 <div class="paging">
                 <a href='JavaScript:void(0);'>上一个</a>
                 <a href='JavaScript:void(0);'>下一个</a>
@@ -115,7 +151,53 @@
     Copyright © 2015.Company name All rights reserved.More Templates ShangHai Gana Biotech Co.,Ltd
 </div>
 <script language="JavaScript" type="text/javascript">
+        var pageNum = 1;
+        var pageSize = 8;
+        $(document).ready(function(){
+            //$("#product_list").empty();
+            //loadPType(${id},1,pageSize);
+            pageNum = pageNum + 2;
+        });
+        function loadPType(productTypeId,offset,size){
+            $.ajax({
+                //请求方式
+                type : "GET",
+                //请求的媒体类型
+                contentType: "application/json;charset=UTF-8",
+                //请求地址
+                url : "${rc.contextPath}/product/list",
+                //数据，json字符串
+               data : {'productTypeId':productTypeId,'pageNum':offset,'pageSize':size},
+                //请求成功
+                success : function(reponse) {
+                    console.log(reponse);
+                    var data = reponse.list;
+                    var sum = reponse.total;
+                    var content = '';
+                    for(var i = 0; i < size; i++){
+                        if(isNull(data[i])){
+                            break;
+                        }
+                        content='<li><div class="view-tenth"><img src="'+data[i].image+'"><a href="${rc.contextPath}/products?id='+data[i].id+'" class="mask" target="_self"><h2>'+data[i].title+'</h2><p>'+data[i].description+'</p></a></div></li>';
+                        $("#product_type_list").append(content);
+                    }
+                     /*隐藏more*/
+                    if ((offset * size) > sum) {
+                        $("#more_btn").text('HIDE');
+                        isHide =true;
+                    }else{
+                        $("#more_btn").text('MORE');
+                        isHide = false;
+                    }
+                },
+                //请求失败，包含具体的错误信息
+                error : function(e){
+                    console.log(e.status);
+                    console.log(e.responseText);
+                }
+            });
 
-    </script>
+        }
+</script>
 </body>
 </html>

@@ -21,7 +21,7 @@ public class ProductTypeRepositoryTest extends BaseTest {
     private ProductTypeRepository productTypeRepository;
 
     @Test
-    public void queryAll() {
-        System.out.println(JSON.toJSONString(productTypeRepository.queryAll()));
+    public void queryByName() {
+        System.out.println(JSON.toJSONString(productTypeRepository.queryByName("test")));
     }
 }
